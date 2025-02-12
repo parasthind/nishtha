@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-size: cover;
+            animation: backgroundSlide 10s infinite;
+        }
+        
+        @keyframes backgroundSlide {
+            0% { background: url(WhatsApp\ Image\ 2025-02-12\ at\ 21.11.23_a98722b5.jpg) no-repeat center center/cover; }
+            50% { background: url(WhatsApp\ Image\ 2025-02-12\ at\ 21.11.25_f19f45a1.jpg) no-repeat center center/cover; }
+            100% { background: url(WhatsApp\ Image\ 2025-02-12\ at\ 21.11.26_d935d81e.jpg) no-repeat center center/cover; }
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ff4081;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="audio.html" allow="autoplay" style="display: none;"></iframe>
+
+    <div class="gallery">
+        <img src="WhatsApp Image 2025-02-12 at 21.11.19_304cca03.jpg" alt="Life Image 1">
+        <img src="WhatsApp Image 2025-02-12 at 21.11.20_c4c2bd00.jpg" alt="Life Image 2">
+        <img src="WhatsApp Image 2025-02-12 at 21.11.21_0d7e7744.jpg" alt="Life Image 3">
+        <img src="WhatsApp Image 2025-02-12 at 21.11.22_caa19bac.jpg" alt="Life Image 4">
+        <img src="WhatsApp Image 2025-02-12 at 21.11.23_a98722b5.jpg" alt="Life Image 5">
+    </div>
+
+    <button class="back-button" onclick="location.href='index2.html'">Go Back</button>
+</body>
+</html>

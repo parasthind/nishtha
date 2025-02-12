@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Music</title>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="(DJJOhAL.Com).mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        let audio = document.getElementById("bg-music");
+
+        // अगर पहले से म्यूजिक प्ले हो रहा है तो नया ऑडियो स्टार्ट ना हो
+        if (localStorage.getItem("musicPlaying") === "true") {
+            audio.currentTime = localStorage.getItem("musicTime") || 0;
+        }
+
+        // ऑडियो प्ले होते ही इसे लोकल स्टोरेज में सेव करें
+        audio.onplay = function () {
+            localStorage.setItem("musicPlaying", "true");
+        };
+
+        // जब म्यूजिक की टाइमिंग बदले, तो उसे लोकल स्टोरेज में सेव करें
+        audio.ontimeupdate = function () {
+            localStorage.setItem("musicTime", audio.currentTime);
+        };
+    </script>
+</body>
+</html>
